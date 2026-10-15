@@ -112,6 +112,17 @@ ul{list-style:none}
 }
 @media (hover:hover) and (pointer:fine){.hint{display:block}.hero{cursor:crosshair}.hero a{cursor:pointer}}
 
+
+/* readability over the line art */
+.kicker,.lead,.hero-prog,.title{text-shadow:0 0 18px rgba(8,7,23,.95),0 0 6px rgba(8,7,23,.9)}
+@media (max-width:900px){
+  .art{opacity:.5}
+  .hero::after{background:
+    linear-gradient(180deg,rgba(8,7,23,.62) 0,rgba(8,7,23,.5) 62%,rgba(8,7,23,.2) 100%),
+    linear-gradient(0deg,#0a0d30 0,rgba(10,13,48,0) 22%)}
+  .hero-bottom{border-top-color:var(--line)}
+}
+
 /* ---------- opening motion ---------- */
 .js .kicker,.js .lead,.js .hero-prog li,.js .hero-dates>a{opacity:0;transform:translateY(18px)}
 .js .title span{opacity:0;transform:translateY(.32em);filter:blur(10px)}
@@ -169,7 +180,7 @@ ul{list-style:none}
 .ev{margin-top:0;display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
 .evc{padding:clamp(24px,3vw,44px) clamp(0px,2.4vw,36px) clamp(24px,3vw,44px) 0;border-bottom:1px solid var(--line)}
 .evc+.evc{padding-left:clamp(0px,2.4vw,36px);padding-right:0;border-left:1px solid var(--line)}
-.evc .dt{font-size:clamp(44px,6vw,86px)}
+.evc .dt{font-size:clamp(28px,2.8vw,40px)}
 .evc h3{margin-top:clamp(16px,2vw,26px);font-weight:500;font-size:clamp(20px,2.2vw,30px);letter-spacing:.14em;line-height:1.5}
 .evc .sub{margin-top:6px;font-size:clamp(12px,1.1vw,14px);color:var(--mute);letter-spacing:.1em}
 .dl{margin-top:clamp(18px,2.2vw,30px);display:grid;grid-template-columns:5.6em 1fr;gap:10px 14px;font-size:clamp(13px,1.2vw,15.5px);line-height:1.8}
@@ -181,8 +192,8 @@ ul{list-style:none}
 /* members */
 .mem{margin-top:0;border-top:1px solid var(--line)}
 .mb{display:grid;grid-template-columns:minmax(150px,30%) 1fr;gap:clamp(14px,3vw,48px);padding:clamp(26px,3.2vw,46px) 0;border-bottom:1px solid var(--line)}
-.mb .nm{font-family:var(--en);font-style:italic;font-size:clamp(28px,3.4vw,46px);line-height:1.15}
-.mb .nm.jp{font-family:var(--jp);font-style:normal;font-size:clamp(24px,2.8vw,38px);letter-spacing:.12em}
+.mb .nm{font-family:var(--en);font-style:italic;font-size:clamp(22px,2.2vw,30px);line-height:1.25}
+.mb .nm.jp{font-family:var(--jp);font-style:normal;font-size:clamp(20px,2vw,26px);letter-spacing:.12em}
 .mb .ro{margin-top:10px;font-size:12px;letter-spacing:.2em;color:var(--mute)}
 .mb .tt{font-size:clamp(13px,1.2vw,15px);letter-spacing:.14em;margin-bottom:.9em;color:var(--ink)}
 .mb p.t{font-size:clamp(13px,1.2vw,15.5px);line-height:2.15;letter-spacing:.06em;color:rgba(244,240,241,.88)}
@@ -303,7 +314,7 @@ ul{list-style:none}
         <div class="dv">
           <b>100BANCH</b><br>
           Listen to the Painting／ライブ＋絵画を聴く音声ガイド体験<br>
-          体験 11:00〜（予約制）／ライブ 18:00〜19:00（無料・予約不要）
+          18:00〜19:00　入場無料・予約不要
         </div>
       </a>
     </div>
@@ -387,10 +398,9 @@ ul{list-style:none}
           <h3>100BANCH</h3>
           <p class="sub">Listen to the Painting／ライブ＋絵画を聴く音声ガイド体験</p>
           <dl class="dl">
-            <dt>体験</dt><dd>11:00〜（予約制）<small>予約方法は決まり次第お知らせします</small></dd>
-            <dt>Live</dt><dd>18:00〜19:00</dd>
-            <dt>Fee</dt><dd>ライブ 無料</dd>
-            <dt>Reserve</dt><dd>ライブ 予約不要</dd>
+            <dt>Time</dt><dd>18:00〜19:00</dd>
+            <dt>Fee</dt><dd>無料</dd>
+            <dt>Reserve</dt><dd>予約不要</dd>
             <dt>Place</dt><dd>東京都渋谷区渋谷3-27-1</dd>
           </dl>
           <a class="btn" href="#access">Map <span>→</span></a>
