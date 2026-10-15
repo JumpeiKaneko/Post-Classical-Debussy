@@ -146,16 +146,17 @@ ul{list-style:none}
 .lab i{font-style:normal;font-size:15px;letter-spacing:.05em;opacity:.8}
 .h2{font-family:var(--en);font-style:italic;font-weight:400;font-size:clamp(40px,6.4vw,96px);line-height:1;letter-spacing:-.01em}
 .h2-jp{margin-top:clamp(20px,2.6vw,36px);font-size:clamp(17px,2.1vw,27px);line-height:1.9;letter-spacing:.06em}
-.body{margin-top:clamp(26px,3.2vw,44px);max-width:38em;font-size:clamp(14px,1.25vw,16.5px);line-height:2.25;letter-spacing:.07em;color:rgba(244,240,241,.9)}
+.body{margin-top:0;max-width:38em;font-size:clamp(14px,1.25vw,16.5px);line-height:2.25;letter-spacing:.07em;color:rgba(244,240,241,.9)}
 .body p+p{margin-top:1.4em}
 
 /* program */
-.prog{margin-top:clamp(34px,4.4vw,64px);border-top:1px solid var(--line)}
+.prog{margin-top:0;border-top:1px solid var(--line)}
 .pr{display:grid;grid-template-columns:3.2em 1fr auto;gap:clamp(10px,2vw,32px);align-items:baseline;padding:clamp(20px,2.6vw,34px) 0;border-bottom:1px solid var(--line)}
 .pr .n{font-family:var(--en);font-size:14px;letter-spacing:.2em;color:var(--mute)}
-.pr .f{font-family:var(--en);font-style:italic;font-size:clamp(26px,3.6vw,50px);line-height:1.15}
+.pr .f{font-family:var(--en);font-style:italic;font-size:clamp(20px,2.2vw,30px);line-height:1.25}
 .pr .j{display:block;margin-top:6px;font-size:clamp(12px,1.1vw,14px);color:var(--mute);letter-spacing:.14em;font-style:normal;font-family:var(--jp)}
 .pr .p{text-align:right;font-size:clamp(12px,1.15vw,15px);line-height:1.8;letter-spacing:.08em}
+.pr .p em{display:block;font-style:italic;font-family:var(--en);font-size:1.1em;letter-spacing:.02em}
 .pr .p small{display:block;color:var(--mute);font-size:.84em;letter-spacing:.12em}
 .pr{grid-template-columns:3.2em 1fr auto clamp(110px,14vw,210px)}
 .pr .pic{margin:0;align-self:center;aspect-ratio:4/3;overflow:hidden;background:rgba(244,240,241,.06);border:1px solid var(--line)}
@@ -165,7 +166,7 @@ ul{list-style:none}
 .cred{margin-top:clamp(18px,2vw,28px);font-size:11.5px;line-height:1.9;letter-spacing:.06em;color:var(--mute)}
 
 /* event */
-.ev{margin-top:clamp(34px,4.4vw,64px);display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
+.ev{margin-top:0;display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
 .evc{padding:clamp(24px,3vw,44px) clamp(0px,2.4vw,36px) clamp(24px,3vw,44px) 0;border-bottom:1px solid var(--line)}
 .evc+.evc{padding-left:clamp(0px,2.4vw,36px);padding-right:0;border-left:1px solid var(--line)}
 .evc .dt{font-size:clamp(44px,6vw,86px)}
@@ -178,7 +179,7 @@ ul{list-style:none}
 .btn:hover{gap:20px}
 
 /* members */
-.mem{margin-top:clamp(34px,4.4vw,64px);border-top:1px solid var(--line)}
+.mem{margin-top:0;border-top:1px solid var(--line)}
 .mb{display:grid;grid-template-columns:minmax(150px,30%) 1fr;gap:clamp(14px,3vw,48px);padding:clamp(26px,3.2vw,46px) 0;border-bottom:1px solid var(--line)}
 .mb .nm{font-family:var(--en);font-style:italic;font-size:clamp(28px,3.4vw,46px);line-height:1.15}
 .mb .nm.jp{font-family:var(--jp);font-style:normal;font-size:clamp(24px,2.8vw,38px);letter-spacing:.12em}
@@ -187,7 +188,7 @@ ul{list-style:none}
 .mb p.t{font-size:clamp(13px,1.2vw,15.5px);line-height:2.15;letter-spacing:.06em;color:rgba(244,240,241,.88)}
 
 /* access */
-.maps{margin-top:clamp(30px,4vw,56px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,48px)}
+.maps{margin-top:0;display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,48px)}
 .mp h3{display:flex;align-items:baseline;gap:14px;font-weight:500;font-size:clamp(18px,1.9vw,26px);letter-spacing:.14em;padding-bottom:14px;border-bottom:1px solid var(--line)}
 .mp h3 em{font-family:var(--en);font-style:italic;font-weight:400;font-size:1.5em;letter-spacing:.02em}
 .map{margin-top:clamp(16px,2vw,26px);position:relative;border:1px solid var(--line);aspect-ratio:4/3.3;background:var(--bg2);overflow:hidden}
@@ -316,8 +317,6 @@ ul{list-style:none}
   <div class="sec-in">
     <div class="lab rv"><i>①</i>Concept</div>
     <div>
-      <h2 class="h2 rv">Unbinding<br>the staff.</h2>
-      <p class="h2-jp rv">五線をほどくと、絵が鳴りはじめる。</p>
       <div class="body rv">
         <p>月の光、アラベスク、ヒースの茂る荒れ地、亜麻色の髪の乙女。ドビュッシーの名曲を、ヴァイオリンと電子音楽で再構成し、絵画をもとにした映像とともに演奏します。</p>
         <p>曲ごとにモネやゴッホの絵画を一枚ずつ組み合わせ、音と映像で上演します。脳科学の研究者・アーティストが加わり、鑑賞者の脳波と同期した映像も体験できます。</p>
@@ -332,35 +331,33 @@ ul{list-style:none}
   <div class="sec-in">
     <div class="lab rv"><i>②</i>Program</div>
     <div>
-      <h2 class="h2 rv">Four pieces,<br>four paintings.</h2>
-      <p class="h2-jp rv">ドビュッシー4曲と、曲ごとの絵画。</p>
       <ol class="prog rv" style="list-style:none">
         <li class="pr">
           <span class="n">01</span>
-          <span class="f">Clair de lune<span class="j">月の光</span></span>
-          <span class="p">モネ《月光の下の船》</span>
-          <figure class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Monet_-_A_Seascape,_Shipping_by_Moonlight_-_Google_Art_Project.jpg?width=640" alt="モネ《月光の下の船》" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('miss')"></figure>
+          <span class="f">Clair de lune<span class="j">ベルガマスク組曲 第3曲「月の光」</span></span>
+          <span class="p">Claude Monet<em>A Seascape, Shipping by Moonlight</em><small>1864年頃　スコットランド国立美術館</small></span>
+          <figure class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Monet_-_A_Seascape,_Shipping_by_Moonlight_-_Google_Art_Project.jpg?width=640" alt="A Seascape, Shipping by Moonlight" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('miss')"></figure>
         </li>
         <li class="pr">
           <span class="n">02</span>
-          <span class="f">Arabesque No.1<span class="j">アラベスク第1番</span></span>
-          <span class="p">ゴッホ《星月夜》<small>1889年</small></span>
-          <figure class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg?width=640" alt="ゴッホ《星月夜》" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('miss')"></figure>
+          <span class="f">Arabesque No.1<span class="j">2つのアラベスク 第1番</span></span>
+          <span class="p">Vincent van Gogh<em>De sterrennacht（The Starry Night）</em><small>1889年　ニューヨーク近代美術館</small></span>
+          <figure class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg?width=640" alt="The Starry Night" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('miss')"></figure>
         </li>
         <li class="pr">
           <span class="n">03</span>
-          <span class="f">Bruyères<span class="j">前奏曲集第2集 第5番《ヒースの茂る荒れ地》</span></span>
-          <span class="p">ゴッホ《手押し車のある風景》<small>1883年</small></span>
-          <figure class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Vincent_van_Gogh_-_Landscape_with_Wheelbarrow_(1883).jpg?width=640" alt="ゴッホ《手押し車のある風景》" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('miss')"></figure>
+          <span class="f">Bruyères<span class="j">前奏曲集 第2集 第5曲「ヒースの茂る荒れ地」</span></span>
+          <span class="p">Vincent van Gogh<em>Landscape with Wheelbarrow</em><small>1883年　クリーブランド美術館</small></span>
+          <figure class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Vincent_van_Gogh_-_Landscape_with_Wheelbarrow_(1883).jpg?width=640" alt="Landscape with Wheelbarrow" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('miss')"></figure>
         </li>
         <li class="pr">
           <span class="n">04</span>
-          <span class="f">La fille aux cheveux de lin<span class="j">亜麻色の髪の乙女</span></span>
-          <span class="p">モネ《ひなげしの畑》<small>1873年</small></span>
-          <figure class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Monet_-_Poppy_Field_-_Google_Art_Project.jpg?width=640" alt="モネ《ひなげしの畑》" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('miss')"></figure>
+          <span class="f">La fille aux cheveux de lin<span class="j">前奏曲集 第1集 第8曲「亜麻色の髪の乙女」</span></span>
+          <span class="p">Claude Monet<em>Les Coquelicots（Poppy Field）</em><small>1873年　オルセー美術館</small></span>
+          <figure class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Monet_-_Poppy_Field_-_Google_Art_Project.jpg?width=640" alt="Les Coquelicots" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('miss')"></figure>
         </li>
       </ol>
-      <p class="cred rv">画像：Wikimedia Commons（いずれもパブリックドメイン）。モネ《月光の下の船》＝A Seascape, Shipping by Moonlight（1864年頃、スコットランド国立美術館）／ゴッホ《星月夜》＝ニューヨーク近代美術館／ゴッホ《手押し車のある風景》＝クリーブランド美術館／モネ《ひなげしの畑》＝オルセー美術館</p>
+      <p class="cred rv">画像：Wikimedia Commons（パブリックドメイン）</p>
     </div>
   </div>
 </section>
@@ -370,8 +367,6 @@ ul{list-style:none}
   <div class="sec-in">
     <div class="lab rv"><i>③</i>Event</div>
     <div>
-      <h2 class="h2 rv">Two nights,<br>two places.</h2>
-      <p class="h2-jp rv">11月14日は美学校、11月28日は100BANCH。</p>
 
       <div class="ev rv">
         <article class="evc">
@@ -410,8 +405,6 @@ ul{list-style:none}
   <div class="sec-in">
     <div class="lab rv"><i>④</i>Members</div>
     <div>
-      <h2 class="h2 rv">Four artists.</h2>
-      <p class="h2-jp rv">映像、ヴァイオリン、脳波、サウンド。</p>
 
       <div class="mem rv">
         <article class="mb">
@@ -467,8 +460,6 @@ ul{list-style:none}
   <div class="sec-in">
     <div class="lab rv"><i>⑤</i>Access</div>
     <div>
-      <h2 class="h2 rv">Find us.</h2>
-      <p class="h2-jp rv">会場へのアクセス。</p>
 
       <div class="maps rv">
         <article class="mp">
