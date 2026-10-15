@@ -94,9 +94,10 @@ ul{list-style:none}
 }
 .hero-bottom{
   margin-top:auto;padding-top:clamp(18px,2.8vh,34px);
-  display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.5fr);gap:clamp(24px,4vw,72px);align-items:end;
+  display:block;
   border-top:1px solid var(--line);
 }
+.hero-bottom .hero-dates{max-width:min(820px,52vw)}
 .hero-prog li{display:flex;align-items:baseline;gap:clamp(12px,1.4vw,20px);flex-wrap:wrap;line-height:1.5;margin-top:6px}
 .hero-prog li:first-child{margin-top:0}
 .hero-prog .f{font-family:var(--en);font-style:italic;font-size:clamp(16px,min(1.8vw,2.9vh),26px)}
@@ -116,10 +117,9 @@ ul{list-style:none}
 /* readability over the line art */
 .kicker,.lead,.hero-prog,.title{text-shadow:0 0 18px rgba(8,7,23,.95),0 0 6px rgba(8,7,23,.9)}
 @media (max-width:900px){
-  .art{opacity:.5}
-  .hero::after{background:
-    linear-gradient(180deg,rgba(8,7,23,.62) 0,rgba(8,7,23,.5) 62%,rgba(8,7,23,.2) 100%),
-    linear-gradient(0deg,#0a0d30 0,rgba(10,13,48,0) 22%)}
+  .art{position:relative;inset:auto;z-index:0;order:3;width:calc(100% + 2*var(--pad));height:clamp(300px,50svh,480px);margin:6px calc(-1*var(--pad)) 0}
+  .kicker{order:1}.title{order:2}.lead{order:4}.hero-bottom{order:5}
+  .hero::after{background:linear-gradient(0deg,#0a0d30 0,rgba(10,13,48,0) 22%)}
   .hero-bottom{border-top-color:var(--line)}
 }
 
@@ -231,8 +231,9 @@ ul{list-style:none}
   .title{font-size:clamp(64px,20vw,150px)}
   .lead{font-size:clamp(13px,3.7vw,18px);line-height:1.9}
   .hero-bottom{display:block;padding-top:22px;margin-top:auto}
+  .hero-bottom .hero-dates{max-width:none}
   .hero-prog{margin-bottom:24px}
-  .hero-dates{grid-template-columns:1fr;gap:24px;padding-top:24px;border-top:1px solid var(--line)}
+  .hero-dates{grid-template-columns:1fr;gap:24px}
   .dt{font-size:clamp(40px,12vw,64px)}
   .ev{grid-template-columns:1fr}
   .evc,.evc+.evc{padding:28px 0;border-left:0}
@@ -293,12 +294,6 @@ ul{list-style:none}
   </p>
 
   <div class="hero-bottom">
-    <ul class="hero-prog" aria-label="曲目">
-      <li><span class="f">Clair de lune</span><span class="j">月の光</span></li>
-      <li><span class="f">Arabesque No.1</span><span class="j">アラベスク第1番</span></li>
-      <li><span class="f">Bruyères</span><span class="j">ヒースの茂る荒れ地</span></li>
-      <li><span class="f">La fille aux cheveux de lin</span><span class="j">亜麻色の髪の乙女</span></li>
-    </ul>
 
     <div class="hero-dates">
       <a href="#event">
@@ -569,10 +564,10 @@ var DOT=[[1493,40,86,87,107,39],[1558,42,159,160,178,98],[2015,42,148,149,167,93
   var STSP=34,CCY=450,thU=0,wU=0,drag=false,dlast=0,tSway=0,TH=0;
   function size(){
     dpr=Math.min(window.devicePixelRatio||1,2);
-    W=hero.clientWidth;H=hero.clientHeight;
+    W=cv.clientWidth;H=cv.clientHeight;
     cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);
     mob=W<900;RM=mob?100:150;
-    if(mob){SC=Math.min(H*.64/1040,W*1.12/636);OX=W-1076*SC;OY=H*.18-20*SC}
+    if(mob){SC=Math.min(H*.92/1040,W*.94/676);OX=W*.5-738*SC;OY=H*.5-540*SC}
     else{SC=H*1.2/1280;OX=W-1076*SC;OY=-20*SC-H*.02}
     TCX=OX+AX*SC;TCY=OY+540*SC;
     var stSp=Math.max(H*.04,26),ccy=H*.5;STSP=stSp;CCY=ccy;
@@ -705,14 +700,14 @@ var DOT=[[1493,40,86,87,107,39],[1558,42,159,160,178,98],[2015,42,148,149,167,93
     setTimeout(setReady,4500);
     window.addEventListener('resize',size);
     hero.addEventListener('pointermove',function(e){
-      var r=hero.getBoundingClientRect();var x=e.clientX-r.left;
+      var r=cv.getBoundingClientRect();var x=e.clientX-r.left;
       if(drag){var ddx=x-dlast;dlast=x;thU+=ddx*.004;wU=ddx*.004*.9}
       mxp=x;myp=e.clientY-r.top;hov=true;
     },{passive:true});
     hero.addEventListener('pointerleave',function(){hov=false;drag=false});
     hero.addEventListener('pointerdown',function(e){
       if(e.target.closest&&e.target.closest('a'))return;
-      var r=hero.getBoundingClientRect();bx=e.clientX-r.left;by=e.clientY-r.top;bt=lastT;
+      var r=cv.getBoundingClientRect();bx=e.clientX-r.left;by=e.clientY-r.top;bt=lastT;
       drag=true;dlast=bx;wU+=(bx>TCX?-1:1)*.03;
     },{passive:true});
     window.addEventListener('pointerup',function(){drag=false});
