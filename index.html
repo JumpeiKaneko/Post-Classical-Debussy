@@ -157,6 +157,12 @@ ul{list-style:none}
 .pr .j{display:block;margin-top:6px;font-size:clamp(12px,1.1vw,14px);color:var(--mute);letter-spacing:.14em;font-style:normal;font-family:var(--jp)}
 .pr .p{text-align:right;font-size:clamp(12px,1.15vw,15px);line-height:1.8;letter-spacing:.08em}
 .pr .p small{display:block;color:var(--mute);font-size:.84em;letter-spacing:.12em}
+.pr{grid-template-columns:3.2em 1fr auto clamp(110px,14vw,210px)}
+.pr .pic{margin:0;align-self:center;aspect-ratio:4/3;overflow:hidden;background:rgba(244,240,241,.06);border:1px solid var(--line)}
+.pr .pic img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.92) brightness(.94);transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .6s}
+.pr:hover .pic img{transform:scale(1.05);filter:none}
+.pr .pic.miss img{display:none}
+.cred{margin-top:clamp(18px,2vw,28px);font-size:11.5px;line-height:1.9;letter-spacing:.06em;color:var(--mute)}
 
 /* event */
 .ev{margin-top:clamp(34px,4.4vw,64px);display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
@@ -220,6 +226,7 @@ ul{list-style:none}
   .evc,.evc+.evc{padding:28px 0;border-left:0}
   .pr{grid-template-columns:2.6em 1fr}
   .pr .p{grid-column:2;text-align:left;margin-top:-4px}
+  .pr .pic{grid-column:2;margin-top:6px;aspect-ratio:16/10}
   .mb{grid-template-columns:1fr}
   .maps{grid-template-columns:1fr}
 }
@@ -332,23 +339,28 @@ ul{list-style:none}
           <span class="n">01</span>
           <span class="f">Clair de lune<span class="j">月の光</span></span>
           <span class="p">モネ《月光の下の船》</span>
+          <figure class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Monet_-_A_Seascape,_Shipping_by_Moonlight_-_Google_Art_Project.jpg?width=640" alt="モネ《月光の下の船》" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('miss')"></figure>
         </li>
         <li class="pr">
           <span class="n">02</span>
           <span class="f">Arabesque No.1<span class="j">アラベスク第1番</span></span>
           <span class="p">ゴッホ《星月夜》<small>1889年</small></span>
+          <figure class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg?width=640" alt="ゴッホ《星月夜》" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('miss')"></figure>
         </li>
         <li class="pr">
           <span class="n">03</span>
           <span class="f">Bruyères<span class="j">前奏曲集第2集 第5番《ヒースの茂る荒れ地》</span></span>
           <span class="p">ゴッホ《手押し車のある風景》<small>1883年</small></span>
+          <figure class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Vincent_van_Gogh_-_Landscape_with_Wheelbarrow_(1883).jpg?width=640" alt="ゴッホ《手押し車のある風景》" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('miss')"></figure>
         </li>
         <li class="pr">
           <span class="n">04</span>
           <span class="f">La fille aux cheveux de lin<span class="j">亜麻色の髪の乙女</span></span>
           <span class="p">モネ《ひなげしの畑》<small>1873年</small></span>
+          <figure class="pic"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Monet_-_Poppy_Field_-_Google_Art_Project.jpg?width=640" alt="モネ《ひなげしの畑》" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add('miss')"></figure>
         </li>
       </ol>
+      <p class="cred rv">画像：Wikimedia Commons（いずれもパブリックドメイン）。モネ《月光の下の船》＝A Seascape, Shipping by Moonlight（1864年頃、スコットランド国立美術館）／ゴッホ《星月夜》＝ニューヨーク近代美術館／ゴッホ《手押し車のある風景》＝クリーブランド美術館／モネ《ひなげしの畑》＝オルセー美術館</p>
     </div>
   </div>
 </section>
@@ -426,7 +438,7 @@ ul{list-style:none}
 
         <article class="mb">
           <div>
-            <div class="nm">YUSA</div>
+            <div class="nm jp">吉村勇作</div>
             <div class="ro">脳波同期映像</div>
           </div>
           <div>
