@@ -117,10 +117,7 @@ ul{list-style:none}
 /* readability over the line art */
 .kicker,.lead,.hero-prog,.title{text-shadow:0 0 18px rgba(8,7,23,.95),0 0 6px rgba(8,7,23,.9)}
 @media (max-width:900px){
-  .art{position:relative;inset:auto;z-index:0;order:3;width:calc(100% + 2*var(--pad));height:clamp(300px,50svh,480px);margin:6px calc(-1*var(--pad)) 0}
-  .kicker{order:1}.title{order:2}.lead{order:4}.hero-bottom{order:5}
-  .hero::after{background:linear-gradient(0deg,#0a0d30 0,rgba(10,13,48,0) 22%)}
-  .hero-bottom{border-top-color:var(--line)}
+  .hero::after{background:linear-gradient(0deg,#0a0d30 0,rgba(10,13,48,0) 18%)}
 }
 
 /* ---------- opening motion ---------- */
@@ -248,6 +245,60 @@ ul{list-style:none}
   .hero-prog .j{display:block}
   .dl{grid-template-columns:1fr;gap:2px}
   .dl dd{margin-bottom:12px}
+}
+
+/* ================= phone layout (built for the phone) ================= */
+@media (max-width:900px){
+  .hero{touch-action:pan-y;min-height:max(100svh,700px);padding:76px var(--pad) 28px}
+  /* tower sits in the upper part of the first screen; the title may overlap it, nothing below does */
+  .art{inset:0 0 auto 0;width:100%;height:70svh}
+  .kicker{font-size:10.5px;letter-spacing:.3em}
+  .title{margin-top:14px;font-size:clamp(60px,19vw,120px);line-height:.88}
+  .lead{margin-top:auto;padding-top:40px;font-size:13px;line-height:1.85;letter-spacing:.04em}
+  .hero-bottom{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+  .hero-dates{display:block}
+  .hero-dates>a{display:grid;grid-template-columns:7.2em 1fr;gap:0 14px;align-items:center;padding:12px 0}
+  .hero-dates>a+a{border-top:1px solid var(--faint)}
+  .hero-dates .dt{font-size:30px;white-space:nowrap}
+  .hero-dates .dv{margin-top:0;font-size:11.5px;line-height:1.7;letter-spacing:.05em}
+
+  .sec{padding:56px var(--pad)}
+  .prog,.ev,.mem{border-top:0}
+  .sec-in{gap:20px}
+  .lab{font-size:11px;letter-spacing:.3em;padding-bottom:12px;border-bottom:1px solid var(--faint);width:100%}
+  .body{font-size:14px;line-height:2.05;letter-spacing:.05em}
+
+  .pr{grid-template-columns:2em 1fr;gap:4px 10px;padding:18px 0}
+  .pr .f{font-size:21px}
+  .pr .j{font-size:11.5px;margin-top:4px;letter-spacing:.08em}
+  .pr .p{font-size:12px;line-height:1.7;margin-top:2px}
+  .pr .p em{font-size:1.05em}
+  .pr .pic{margin-top:8px;aspect-ratio:16/9}
+  .cred{margin-top:12px;font-size:10.5px}
+
+  .evc,.evc+.evc{padding:22px 0}
+  .evc .dt{font-size:28px}
+  .evc h3{margin-top:6px;font-size:17px;letter-spacing:.12em}
+  .evc .sub{font-size:11.5px}
+  .dl{grid-template-columns:4.6em 1fr;gap:4px 12px;margin-top:12px;font-size:13px;line-height:1.7}
+  .dl dt{padding-top:.25em;font-size:10.5px}
+  .dl dd{margin-bottom:0}
+  .btn{margin-top:12px;font-size:11px;padding:4px 0}
+
+  .mb{padding:22px 0;gap:8px}
+  .mb .nm{font-size:22px}
+  .mb .nm.jp{font-size:19px}
+  .mb .ro{margin-top:4px;font-size:11px}
+  .mb .tt{font-size:12.5px;margin-bottom:.6em}
+  .mb p.t{font-size:13px;line-height:2}
+
+  .maps{gap:28px}
+  .mp h3{font-size:15px;padding-bottom:10px}
+  .map{aspect-ratio:4/3}
+  .addr{font-size:12.5px;margin-top:12px}
+  .ft{padding:44px var(--pad) 32px}
+  .ft-t{font-size:clamp(34px,11vw,54px)}
+  .ft-m{font-size:10.5px;margin-top:24px}
 }
 </style>
 </head>
@@ -563,11 +614,11 @@ var DOT=[[1493,40,86,87,107,39],[1558,42,159,160,178,98],[2015,42,148,149,167,93
   var mxp=-9999,myp=-9999,act=0,hov=false,bx=0,by=0,bt=-99,RM=150,lastT=0,IX=0,IY=0;
   var STSP=34,CCY=450,thU=0,wU=0,drag=false,dlast=0,tSway=0,TH=0;
   function size(){
-    dpr=Math.min(window.devicePixelRatio||1,2);
+    dpr=Math.min(window.devicePixelRatio||1,cv.clientWidth<900?3:2);
     W=cv.clientWidth;H=cv.clientHeight;
     cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);
     mob=W<900;RM=mob?100:150;
-    if(mob){SC=Math.min(H*.92/1040,W*.94/676);OX=W*.5-738*SC;OY=H*.5-540*SC}
+    if(mob){SC=Math.min(H*.78/1040,W*1.0/676);OX=W*.5-738*SC;OY=H*.03-20*SC}
     else{SC=H*1.2/1280;OX=W-1076*SC;OY=-20*SC-H*.02}
     TCX=OX+AX*SC;TCY=OY+540*SC;
     var stSp=Math.max(H*.04,26),ccy=H*.5;STSP=stSp;CCY=ccy;
@@ -651,7 +702,7 @@ var DOT=[[1493,40,86,87,107,39],[1558,42,159,160,178,98],[2015,42,148,149,167,93
     for(gi=0;gi<groups.length;gi++){
       gr=groups[gi];idx=gr.idx;n=idx.length;
       a=gr.a*(.6+.4*fin);
-      if(mob)a*=.7;
+      if(mob)a*=.85;
       ctx.beginPath();
       for(q=0;q<n;q++){k=idx[q];if(!VIS[k])continue;ctx.moveTo(X1[k],Y1[k]);ctx.lineTo(X2[k],Y2[k])}
       ctx.lineWidth=mob?1:1.4;ctx.strokeStyle='rgba('+gr.r+','+gr.g+','+gr.b+','+(a>1?1:a)+')';ctx.stroke();
